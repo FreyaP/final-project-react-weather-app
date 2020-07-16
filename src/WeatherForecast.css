@@ -1,0 +1,21 @@
+.WeatherForecast {
+  color: #f5a623;
+  padding: 10px;
+  background-color: #ffffff;
+  margin-top: 10px;
+  text-align: left;
+}
+
+.WeatherForecast .forecast {
+  font-size: 50px;
+}
+.WeatherForecast hr {
+  border-top: 1px solid #fad291;
+}
+.WeatherForecast .interval {
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+.WeatherForecast .daily {
+  margin-top: 40px;
+}
