@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 
+import FormattedDate from "./FormattedDate";
 import SearchEngine from "./SearchEngine";
 import "./WeatherCurrent.css";
 import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
@@ -10,10 +11,10 @@ export default function WeatherCurrent() {
   const [weatherData, setWeatherdata] = useState({ ready: false });
 
   function handleResponse(response) {
-    console.log(response.data);
     setWeatherdata({
       ready: true,
       name: response.data.name,
+      date: new Date(response.data.dt * 1000),
       description: response.data.weather[0].description,
       temperature: response.data.main.temp,
       wind: response.data.wind.speed,
@@ -31,7 +32,9 @@ export default function WeatherCurrent() {
         <h1 className="location">
           {weatherData.name}, {weatherData.country}
         </h1>
-        <h5 className="date">Tues. 3rd July, 3pm</h5>
+        <h5 className="date">
+          <FormattedDate date={weatherData.date} />
+        </h5>
         <div className="clear-fix weatherMain">
           <img
             src="https://www.iconsdb.com/icons/preview/white/rain-xxl.png"
