@@ -13,7 +13,7 @@
   margin-bottom: 15px;
 }
 .Weather .weatherMain {
-  margin: 30px 0;
+  margin: 20px 0;
 }
 .Weather img {
   height: 90px;
@@ -23,7 +23,7 @@
 }
 .Weather .temperature {
   font-size: 80px;
-  line-height: 64px;
+  line-height: 80px;
 }
 
 .Weather .units {
@@ -36,12 +36,12 @@
   color: #fad291;
 }
 .Weather .description {
-  margin-top: 10px;
   font-weight: 600;
 }
 .Weather ul {
   list-style: none;
   padding: 0;
+  margin-bottom: 30px;
 }
 .Weather li {
   margin: 10px 0 10px 0;
@@ -51,4 +51,7 @@
 }
 .Weather hr {
   border-top: 1px solid #ffffff;
+}
+.Weather .weatherDetails {
+  color: #fad291;
 }

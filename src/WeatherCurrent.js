@@ -50,9 +50,18 @@ export default function WeatherCurrent() {
           {weatherData.description}
         </h3>
         <ul>
-          <li>Feels Like: {Math.round(weatherData.feelsLike)}°C</li>
-          <li>Wind: {weatherData.wind}km/h</li>
-          <li>Humidity: {weatherData.humidity}%</li>
+          <li>
+            <span className="weatherDetails">Feels Like:</span>{" "}
+            <strong>{Math.round(weatherData.feelsLike)}°C</strong>
+          </li>
+          <li>
+            <span className="weatherDetails">Wind:</span>{" "}
+            <strong>{weatherData.wind}km/h</strong>
+          </li>
+          <li>
+            <span className="weatherDetails">Humidity:</span>
+            <strong> {weatherData.humidity}%</strong>
+          </li>
         </ul>
         <SearchEngine />
       </div>
