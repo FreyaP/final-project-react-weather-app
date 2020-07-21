@@ -38,7 +38,7 @@ export default function WeatherCurrent() {
         <div className="clear-fix weatherMain">
           <img
             src="https://www.iconsdb.com/icons/preview/white/rain-xxl.png"
-            alt="rain"
+            alt="weather icon"
           ></img>
 
           <span className="temperature">
