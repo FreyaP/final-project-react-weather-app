@@ -8,12 +8,10 @@ import "./App.css";
 export default function App() {
   return (
     <div className="App row">
-      <div className="col-6">
-        <WeatherCurrent />
-      </div>
-      <div className="col-6">
-        <WeatherForecast />
-      </div>
+      
+        <WeatherCurrent defaultCity="Vancouver"/>
+      
+      
       <footer>
         This app is open sourced on{" "}
         <a

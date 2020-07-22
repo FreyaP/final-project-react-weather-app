@@ -1,17 +1,15 @@
 import React, { useState } from "react";
 import axios from "axios";
-
-
-import SearchEngine from "./SearchEngine";
+import WeatherForecast from "./WeatherForecast";
 import WeatherInfo from "./WeatherInfo"
 
 import "./WeatherCurrent.css";
 import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
 import Loader from "react-loader-spinner";
 
-export default function WeatherCurrent() {
+export default function WeatherCurrent(props) {
   const [weatherData, setWeatherdata] = useState({ ready: false });
-
+  const [city, updateCity] = useState(props.defaultCity);
   function handleResponse(response) {
     setWeatherdata({
       ready: true,
@@ -25,23 +23,57 @@ export default function WeatherCurrent() {
       country: response.data.sys.country,
     });
   }
+function handleChange(event) {
+  updateCity(event.target.value);
+}
 
+function handleSubmit(event) {
+  event.preventDefault();
+  searchCity();
+}
+
+function searchCity(){
+  const apiKey = "8c8f09ab6406d1fc43401acc75ad7253";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(handleResponse);
+}
   if (weatherData.ready) {
     return (
       <div>
+        <form onSubmit={handleSubmit}>
+      <div className="row">
+        <div className="col-9">
+          <input
+            type="search"
+            placeholder="Change location"
+            className="form-control"
+            autoFocus="on"
+            onChange={handleChange}
+          />
+        </div>
+        <div className="col-3">
+          <input
+            type="submit"
+            value="Search"
+            className="btn btn-secondary w-100"
+          />
+        </div>
+      </div>
+    </form>
+        <div className="row">
+          <div className="col-6">
       <WeatherInfo data={weatherData}/>
+      </div>
       
-        
-        <SearchEngine />
+          <div className="col-6">
+      <WeatherForecast />
+      </div>
+      </div>
         </div>
     );
   } else {
-    const apiKey = "8c8f09ab6406d1fc43401acc75ad7253";
-    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=Vancouver&appid=${apiKey}&units=metric`;
-
-    axios.get(apiUrl).then(handleResponse);
-
-    return (
+searchCity();
+return ( 
       <Loader
         type="Circles"
         color="#F5A623"
@@ -49,6 +81,6 @@ export default function WeatherCurrent() {
         width={150}
         timeout={4000} 
       />
-    );
+);
   }
 }
