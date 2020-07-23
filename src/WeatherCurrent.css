@@ -15,11 +15,10 @@
 .Weather .weatherMain {
   margin: 20px 0;
 }
-.Weather img {
-  height: 90px;
-  max-width: 150px;
-  line-height: 64px;
-  padding-right: 30px;
+.Weather canvas {
+  margin-right: 8px;
+  vertical-align: top;
+  
 }
 .Weather .temperature {
   font-size: 80px;
@@ -28,12 +27,13 @@
 
 .Weather .units {
   position: relative;
-  top: -32px;
+  top: -40px;
 }
 
 .Weather .fahrenheit {
   margin-left: 10px;
   color: #fad291;
+  
 }
 .Weather .description {
   font-weight: 600;

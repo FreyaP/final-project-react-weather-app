@@ -21,6 +21,7 @@ export default function WeatherCurrent(props) {
       humidity: response.data.main.humidity,
       feelsLike: response.data.main.feels_like,
       country: response.data.sys.country,
+      icon: response.data.weather[0].icon,
     });
   }
 function handleChange(event) {
