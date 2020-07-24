@@ -11,12 +11,14 @@
 .Weather .date {
   color: #fad291;
   margin-bottom: 15px;
+  font-size: smaller;
 }
 .Weather .weatherMain {
   margin: 20px 0;
 }
 .Weather canvas {
   margin-right: 8px;
+  margin-left: 15px;
   vertical-align: top;
   
 }
