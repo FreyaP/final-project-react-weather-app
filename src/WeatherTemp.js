@@ -1,6 +1,8 @@
 
  import React, { useState } from "react";
 
+//converts temp to celsius or fahrenheit
+
 export default function WeatherTemp(props) {
 const [unit, updateUnit] = useState("celsius");
 

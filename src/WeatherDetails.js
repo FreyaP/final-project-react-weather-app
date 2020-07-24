@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import "./WeatherDetails.css";
 
+//shows feels like, wind speed and humidity in imperial and metric
+
 export default function FeelsLike(props) {
     const [unit, updateUnit] = useState("metric");
 
