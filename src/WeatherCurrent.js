@@ -8,10 +8,11 @@ import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
 import Loader from "react-loader-spinner";
 
 export default function WeatherCurrent(props) {
-  const [weatherData, setWeatherdata] = useState({ ready: false });
+  const [weatherData, setWeatherData] = useState({ ready: false });
   const [city, updateCity] = useState(props.defaultCity);
+  
   function handleResponse(response) {
-    setWeatherdata({
+    setWeatherData({
       ready: true,
       name: response.data.name,
       date: new Date(response.data.dt * 1000),
@@ -22,7 +23,10 @@ export default function WeatherCurrent(props) {
       feelsLike: response.data.main.feels_like,
       country: response.data.sys.country,
       icon: response.data.weather[0].icon,
+      lon: response.data.coord.lon,
+      lat: response.data.coord.lat,
     });
+    
   }
 function handleChange(event) {
   updateCity(event.target.value);
@@ -67,7 +71,7 @@ function searchCity(){
       </div>
       
           <div className="col-6">
-      <WeatherForecast />
+        <WeatherForecast data={weatherData}/>
       </div>
       </div>
         </div>

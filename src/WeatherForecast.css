@@ -17,5 +17,17 @@
   margin-bottom: 10px;
 }
 .WeatherForecast .daily {
-  margin-top: 40px;
+  margin-top: 20px;
+}
+
+.WeatherForecast canvas {
+  display: block;
+  margin: 5px auto;
+}
+
+.WeatherForecast .hourly {
+  margin-right: 10px;
+}
+.WeatherForecast .days {
+  text-align: center;
 }

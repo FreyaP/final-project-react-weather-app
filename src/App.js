@@ -1,8 +1,6 @@
 import React from "react";
 import WeatherCurrent from "./WeatherCurrent";
 
-import WeatherForecast from "./WeatherForecast";
-
 import "./App.css";
 
 export default function App() {
