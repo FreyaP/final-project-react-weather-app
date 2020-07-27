@@ -2,7 +2,6 @@ import React from "react";
 import WeatherForecastIcon from "./WeatherForecastIcon";
 
 export default function WeatherDaily(props) {
-    console.log(props.data);
 
     function day(){
         let date = new Date(props.data.dt * 1000);

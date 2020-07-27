@@ -3,7 +3,7 @@ import axios from "axios";
 import WeatherForecast from "./WeatherForecast";
 import WeatherInfo from "./WeatherInfo"
 
-import "./WeatherCurrent.css";
+import "./Weather.css";
 import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
 import Loader from "react-loader-spinner";
 
@@ -47,7 +47,7 @@ function searchCity(){
       <div>
         <form onSubmit={handleSubmit}>
       <div className="row">
-        <div className="col-9">
+        <div className="col-6">
           <input
             type="search"
             placeholder="Change location"

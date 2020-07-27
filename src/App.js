@@ -1,13 +1,13 @@
 import React from "react";
-import WeatherCurrent from "./WeatherCurrent";
+import Weather from "./Weather";
 
 import "./App.css";
 
 export default function App() {
   return (
-    <div className="App row">
+    <div className="App">
       
-        <WeatherCurrent defaultCity="Vancouver"/>
+        <Weather defaultCity="Vancouver"/>
       
       
       <footer>

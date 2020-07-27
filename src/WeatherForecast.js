@@ -8,14 +8,16 @@ export default function WeatherForecast(props) {
   const [loaded, setLoaded] = useState(false);
   const [daily, setDaily] = useState(null);
   const [hourly, setHourly] = useState(null);
+  const [lat, setLat] = useState(null);
   
   function handleResponse(response) {
     setDaily(response.data.daily);
     setHourly(response.data.hourly);
+    setLat(response.data.lat);
     setLoaded(true);
 }
 
-  if (loaded)  {
+  if (loaded && props.data.lat === lat)  {
   return (
     <div className="WeatherForecast">
       <h1 className="forecast">Forecast</h1>

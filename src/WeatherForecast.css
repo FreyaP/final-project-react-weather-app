@@ -27,6 +27,7 @@
 
 .WeatherForecast .hourly {
   margin-right: 10px;
+  text-align: center;
 }
 .WeatherForecast .days {
   text-align: center;
