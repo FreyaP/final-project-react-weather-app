@@ -50,7 +50,7 @@ function searchCity(){
         <div className="col-6">
           <input
             type="search"
-            placeholder="Change location"
+            placeholder="Change location..."
             className="form-control"
             autoFocus="on"
             onChange={handleChange}
@@ -85,6 +85,7 @@ return (
         height={150}
         width={150}
         timeout={4000} 
+        className="loader"
       />
 );
   }
