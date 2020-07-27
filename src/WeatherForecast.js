@@ -24,19 +24,19 @@ export default function WeatherForecast(props) {
       <hr />
       <h2 className="interval">Hourly</h2>
       <div className="row">
-      <WeatherHourly data={hourly[0]} />
       <WeatherHourly data={hourly[1]} />
       <WeatherHourly data={hourly[2]} />
       <WeatherHourly data={hourly[3]} />
       <WeatherHourly data={hourly[4]} />
+      <WeatherHourly data={hourly[5]} />
       </div>
       <h2 className="interval daily">Daily</h2>
       <div className="row">
-      <WeatherDaily data={daily[0]} />
       <WeatherDaily data={daily[1]} />
       <WeatherDaily data={daily[2]} />
       <WeatherDaily data={daily[3]} />
       <WeatherDaily data={daily[4]} />
+      <WeatherDaily data={daily[5]} />
       </div>
     </div>
   );}
